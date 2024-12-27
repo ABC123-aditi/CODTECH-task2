@@ -1,0 +1,306 @@
+/* this is our task2 quiz website */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+</head>
+<body>
+    <header>
+            <div class="container">
+                <h1 class="logo">Quiz</h1>
+                <nav>
+                    <ul>
+                        <li><a href="./homepage.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="home">
+            <div class="home-content">
+        <h1>Quiz Website</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fugiat, explicabo obcaecati reiciendis quibusdam tempora asperiores earum animi at enim error accusamus ratione exercitationem eius nostrum labore qui dolor! Fuga.</p>
+    <button class="start-btn">Start Quiz</button>        
+    </div>
+        </section>
+        </body>
+        <body>
+        <section class="quiz" style="display: none;">
+            <div class="quiz-content">
+                <h2>QUIZ QUESTIONS</h2>
+                <!-- Question 1 -->
+                <div class="question" data-correct-answer="4">
+                    <p>1:What is 2 + 2?</p>
+                    <ul>
+                        <li><input type="radio" name="q1" value="3"> 3</li>
+                        <li><input type="radio" name="q1" value="4"> 4</li>
+                        <li><input type="radio" name="q1" value="5"> 5</li>
+                        <li><input type="radio" name="q1" value="6"> 6</li>
+                    </ul>
+                </div>
+                <div class="question" data-correct-answer="Paris">
+                    <p>2:What is the capital of France?</p>
+                    <ul>
+                        <li><input type="radio" name="q2" value="Berlin"> Berlin</li>
+                        <li><input type="radio" name="q2" value="Madrid"> Madrid</li>
+                        <li><input type="radio" name="q2" value="Paris"> Paris</li>
+                        <li><input type="radio" name="q2" value="Rome"> Rome</li>
+                    </ul>
+                </div>
+                <div class="question" data-correct-answer="Jupiter">
+                    <p>3: What is the largest planet in our solar system?</p>
+                    <ul>
+                        <li><input type="radio" name="q3" value="Earth">Earth</li>
+                        <li><input type="radio" name="q3" value="Mars"> Mars</li>
+                        <li><input type="radio" name="q3" value="Jupiter">Jupiter</li>
+                        <li><input type="radio" name="q3" value="saturn">Saturn</li>
+                    </ul>
+                </div>
+                <div class="question" data-correct-answer="H2O">
+                    <p>4:What is the chemical symbol for water?</p>
+                    <ul>
+                        <li><input type="radio" name="q4" value="H2O2">H2O2</li>
+                        <li><input type="radio" name="q4" value="CO2">CO2</li>
+                        <li><input type="radio" name="q4" value="H2O"> H2O</li>
+                        <li><input type="radio" name="q4" value="O2"> O2</li>
+                    </ul>
+                </div>
+                <div class="question" data-correct-answer="206">
+                    <p>5:How many bones are there in the adult human body?</p>
+                    <ul>
+                        <li><input type="radio" name="q5" value="222">222</li>
+                        <li><input type="radio" name="q5" value="120"> 120</li>
+                        <li><input type="radio" name="q5" value="218"> 218</li>
+                        <li><input type="radio" name="q5" value="206">206</li>
+                    </ul>
+                </div>
+        
+                <button class="submit-btn">Submit Quiz</button>
+            </div>
+        </section>
+        
+        <section class="results" style="display: none;">
+            <div class="results-content">
+                <h2>Your Score</h2>
+                <p class="score"></p>
+                <p class="feedback"></p>
+                <button class="retry-btn">Retry</button>
+            </div>
+        </section>
+
+
+
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:#fff;
+            color: #333;
+            line-height: 1.6;
+            
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding:5px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #eee6e6;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ff6600; /* Hover effect color */
+        }
+        .home{
+            width: 200vh;
+            display: flex;
+            justify-content: center;
+         text-align: center;
+       margin-top:160px;
+      
+        }
+        .home-content{
+            max-width: 600px;
+            align-items: center;
+            flex-direction: column;
+        }
+        .home-content h1{
+            font-size: 40px;
+           font-weight:700; 
+        }
+        .home-content p{
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .home-content .start-btn{
+            width:120px;
+            height: 35px;
+            color: #eee6e6;
+            background-color: rgb(19, 18, 18);
+            border-radius:6px;  
+        }
+        .home-content .start-btn:hover{
+            background: #a76262;
+        }
+        .quiz {
+    display: none;
+    text-align: left;
+    margin-left: 30px;
+}
+h2{
+    text-align: center;
+    font-size: 25px;
+    color: #a76262;
+}
+.home, .quiz {
+    transition: opacity 0.3s ease;
+}
+.submit-btn{
+    padding: 2px;
+    width:70px;
+            height: 20px;
+            color: #eee6e6;
+            background-color: rgb(19, 18, 18);
+            border-radius:6px;  
+        }
+.results {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.feedback {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.retry-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+</style>
+<script>
+// Get references to the relevant elements
+const startBtn = document.querySelector('.start-btn');
+const homeSection = document.querySelector('.home');
+const quizSection = document.querySelector('.quiz');
+const submitBtn = document.querySelector('.submit-btn');
+const resultsSection = document.querySelector('.results');
+const scoreDisplay = document.querySelector('.score');
+const feedbackDisplay = document.querySelector('.feedback');
+const retryBtn = document.querySelector('.retry-btn');
+
+// When the "Start Quiz" button is clicked
+startBtn.addEventListener('click', () => {
+    homeSection.style.display = 'none'; // Hide home section
+    quizSection.style.display = 'block'; // Show quiz section
+});
+
+// When the "Submit Quiz" button is clicked
+submitBtn.addEventListener('click', () => {
+    const questions = document.querySelectorAll('.question');
+    let score = 0;
+
+    // Loop through each question
+    questions.forEach((question) => {
+        const correctAnswer = question.getAttribute('data-correct-answer');
+        const selectedAnswer = question.querySelector('input[type="radio"]:checked');
+
+        if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+            score++;
+        }
+    });
+
+    // Display score and feedback
+    scoreDisplay.textContent = `You scored ${score} out of ${questions.length}.`;
+    
+    let feedbackMessage;
+    if (score === questions.length) {
+        feedbackMessage = "Excellent! You got all the answers right!";
+    } else if (score > questions.length / 2) {
+        feedbackMessage = "Good job! You did well!";
+    } else {
+        feedbackMessage = "Better luck next time!";
+    }
+    feedbackDisplay.textContent = feedbackMessage;
+
+    // Hide quiz section and show results
+    quizSection.style.display = 'none';
+    resultsSection.style.display = 'block';
+});
+
+// When the "Retry" button is clicked
+retryBtn.addEventListener('click', () => {
+    resultsSection.style.display = 'none'; // Hide results section
+    homeSection.style.display = 'block'; // Show home section again
+});
+</script>
+
+
+
+
+
+</body>
+</html>
